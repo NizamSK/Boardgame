@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: boardgame
-  namespace: aqt-ns
   labels:
     app: boardgame
 spec:
@@ -19,4 +18,4 @@ spec:
       - name: boardgame-container
         image: 894486220781.dkr.ecr.us-east-1.amazonaws.com/boardgame:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
