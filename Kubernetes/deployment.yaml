@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aqt-app
+  name: boardgame
   namespace: aqt-ns
   labels:
-    app: aqt-app
+    app: boardgame
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: aqt-app
+      app: boardgame
   template:
     metadata:
       labels:
-        app: aqt-app
+        app: boardgame
     spec:
       containers:
-      - name: aqt-container
-        image: 894486220781.dkr.ecr.us-east-1.amazonaws.com/aqt:latest
+      - name: boardgame-container
+        image: 894486220781.dkr.ecr.us-east-1.amazonaws.com/boardgame:latest
         ports:
         - containerPort: 3000
