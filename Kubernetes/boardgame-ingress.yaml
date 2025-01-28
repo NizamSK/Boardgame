@@ -3,10 +3,11 @@ kind: Ingress
 metadata:
   name: boardgame-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /  # Ensures proper routing for the backend
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx  # Ensure this matches your Ingress Controller
   rules:
-  - host: nizam.work.gd  # Replace with your custom domain or external IP
+  - host: nizam.work.gd  # Your domain name
     http:
       paths:
       - path: /
@@ -15,4 +16,4 @@ spec:
           service:
             name: boardgame
             port:
-              number: 80  # The port defined in the service
+              number: 80
