@@ -7,9 +7,9 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 3000  
+    port: 80        # Change the exposed port to 80 for HTTP traffic
     protocol: TCP
-    targetPort: 8080 
+    targetPort: 8080 # The container port your app is exposing
   selector:
-    app: boardgame  
-  type: LoadBalancer 
+    app: boardgame
+  type: ClusterIP  # Change type to ClusterIP for Ingress routing
