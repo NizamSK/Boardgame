@@ -2,15 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: boardgame
-  namespace: bg
   labels:
     app: boardgame
 spec:
   ports:
   - name: http
-    port: 3000
+    port: 3000  
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8080 
   selector:
-    app: boardgame
-  type: LoadBalancer
+    app: boardgame  
+  type: LoadBalancer 
