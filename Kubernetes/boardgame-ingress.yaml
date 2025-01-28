@@ -1,19 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: boardgame-ingress
+  name: boardgame-ingress  # The name of the Ingress resource
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /  # Optional: Rewrites the URL to root path
 spec:
-  ingressClassName: nginx  # Ensure this matches your Ingress Controller
+  ingressClassName: nginx  # Ensures that the Ingress is handled by NGINX Ingress Controller
   rules:
-  - host: nizam.work.gd  # Your domain name
+  - host: nizam.work.gd  # Replace with your custom domain name
     http:
       paths:
-      - path: /
+      - path: /  # The root path (you can also add more paths if needed)
         pathType: Prefix
         backend:
           service:
-            name: boardgame
+            name: boardgame  # The name of the service we want to route traffic to
             port:
-              number: 80
+              number: 80  # The port exposed by the Service
